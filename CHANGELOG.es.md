@@ -1,5 +1,61 @@
 ## Changelog
 
+### 2.4.6
+
+*2018-08-09*
+
+- Arreglada la tabla que no mostraba el ícono del filtro cuando a  `filter` se les asignaba un array vacío, #12165
+- Arreglado Menu que no guardaba el estado activo cuando cambiaba `collapse` #12178 (por @elfman)
+- Se ha corregido que Cascader no escapaba a los caracteres especiales para Regexp, #12248
+- Se ha corregido que el RadioBotón deshabilitado mostraba la sombra de la caja cuando se hacía clic, #12262
+- Arreglado el efecto de la tecla de flecha en Select cuando el valor por defecto es `undefined`,#12322
+- Corregida la función de consulta de Select not debounced en modo multi, #12181
+- Corregida que la palabra clave de consulta de Select desaparecía en modo multi, #12304
+- Corregido el ancho incorrecto de Dialog cuando se muestra a pantalla completa, #12203
+- Corregida la visualización incorrecta de Main en IE, #12237
+- Corregido el trigger de Input con dos validaciones de Form, #12260
+- Arreglado el añadir un nuevo nodo de árbol que causaba que los nodos desaparecieran, #12256
+- Arreglado el nodo Tree no se borraba después de arrastrar, #12279
+- Popover corregido porque no era visible cuando InputNumber no enfocaba, #12284
+- Añadido el atributo `popper-append-to-body` para Autocompletar, #12241
+- Añadido el modificador `sync` para el atributo `page-size` de Pagination, #12281
+
+### 2.4.5
+
+*2018-07-26*
+
+- Se ha corregido en Table que `class-name` no funcionaba para las columnas `expand`, #12006
+- Se ha añadido el método `toggleAllSelection` para Table, #12047
+- Corregida la posición incorrecta del `suffix slot` cuando Input contiene Select, #12108 
+- Corregido que el `line-height` de Option no se establecia, #12120
+- Corregido que TimeSelect con valor por defecto `null` no podia ser asignado después de ejecutar `resetField`, #12010
+- Arreglado el evento `keydown` que cuando no era una tecla de flecha no funciona en Tree, #12008
+- Corregido nodo padre checked en modo lazy, #12106
+- Añadido el parámetro `includeHalfChecked` para getCheckedNodes de Tree, #12014
+
+### 2.4.4
+
+*2018-07-13*
+
+- Corregido que se disparaba la validacion del Select después de reajustar el formulario, #11837
+- Corregida la posición incorrecta del slot Input `suffix`  cuando se usaba el slot `suffix` con el slot  `append`  , #11951
+- Corregido el clearable Input que muestraba el icono de borrado cuando era readonly, #11967
+- Arreglado el nodo Tree checked cuando estaba disabled, #11847
+- Corregido que  `default-checked-keys`  no funcionaba en Tree, #11971
+- Corregido que el `empty-text` no era visible cuando el nodo Tree se filtraba, #11971
+- Arreglada la posición de texto vacío sobredimensionado en Table, #11965
+- Corregido que la fila de la tabla no se modificado el resaltado cuando `current-row-key` era asignada a null, #11866
+- Arreglado que mostraba el filtro del dropdown cuando los filtros eran un array vacío, #11864
+- Corregido que el cambio de label de Radio no detenia propagacion de eventos, #11912
+
+### 2.4.3
+
+*2018-07-03*
+
+- Corregido `allow-drop` que no funcionaba correctamente cuando los nodos de árbol tenian una altura personalizada, #11797
+- Ahora puede pasar un parámetro al método `clearValidate` de Form, especificando qué resultados de validación de `FormItems` necesita borrar, #11821
+- Añadido el atributo `distinguishCancelAndClose` para MessageBox, #11831
+
 ### 2.4.2
 
 *2018-06-26*

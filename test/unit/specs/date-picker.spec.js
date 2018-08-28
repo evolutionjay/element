@@ -1517,22 +1517,11 @@ describe('DatePicker', () => {
       const td = vm.$refs.compo.picker.$el.querySelector('.el-date-table__row .available');
       td.click();
       setTimeout(_ => {
-        expect(vm.$refs.compo.picker.selectedDate).to.exist;
+        expect(vm.$refs.compo.value).to.be.an('array');
+        expect(vm.$refs.compo.value.length).to.equal(1);
+        expect(vm.$refs.compo.value[0]).to.be.a('number');
         expect(vm.value.length).to.equal(1);
         done();
-      }, DELAY);
-    });
-
-    it('value format', done => {
-      const td = vm.$refs.compo.picker.$el.querySelector('.el-date-table__row .available');
-      td.click();
-      setTimeout(_ => {
-        vm.$refs.compo.picker.$el.querySelector('.el-button--default').click();
-        setTimeout(() => {
-          expect(vm.$refs.compo.picker.selectedDate).to.exist;
-          expect(vm.value.length).to.equal(1);
-          done();
-        }, DELAY);
       }, DELAY);
     });
 
@@ -1923,6 +1912,17 @@ describe('DatePicker', () => {
           const leftCell = pickers[0].querySelector('td.available');
           const rightCell = pickers[1].querySelector('td.available');
 
+          const {
+            minDate,
+            maxDate
+          } = vm.picker;
+          expect(minDate.getHours()).to.be.equal(10);
+          expect(minDate.getMinutes()).to.be.equal(10);
+          expect(minDate.getSeconds()).to.be.equal(0);
+          expect(maxDate.getHours()).to.be.equal(10);
+          expect(maxDate.getMinutes()).to.be.equal(10);
+          expect(maxDate.getSeconds()).to.be.equal(0);
+
           triggerEvent(leftCell, 'mousemove', true);
           setTimeout(_ => {
             triggerEvent(leftCell, 'click', true);
@@ -2023,6 +2023,17 @@ describe('DatePicker', () => {
           const pickers = vm.picker.$el.querySelectorAll('.el-date-range-picker__content');
           const leftCell = pickers[0].querySelector('td.available');
           const rightCell = pickers[1].querySelector('td.available');
+
+          const {
+            minDate,
+            maxDate
+          } = vm.picker;
+          expect(minDate.getHours()).to.be.equal(10);
+          expect(minDate.getMinutes()).to.be.equal(10);
+          expect(minDate.getSeconds()).to.be.equal(0);
+          expect(maxDate.getHours()).to.be.equal(10);
+          expect(maxDate.getMinutes()).to.be.equal(10);
+          expect(maxDate.getSeconds()).to.be.equal(0);
 
           triggerEvent(leftCell, 'mousemove', true);
           setTimeout(_ => {
